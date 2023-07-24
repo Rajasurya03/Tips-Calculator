@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="69dp"
+    tools:layout_editor_absoluteY="13dp">
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etPriceAmount"
+        app:layout_constraintEnd_toEndOf="@+id/tvTipPercentage"
+        app:layout_constraintStart_toStartOf="@+id/tvTipPercentage"
+        app:layout_constraintTop_toTopOf="@+id/etPriceAmount" />
+
+    <EditText
+        android:id="@+id/etPriceAmount"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="100"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTipPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text=""
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvTip"
+        app:layout_constraintStart_toStartOf="@+id/tvTip"
+        app:layout_constraintTop_toBottomOf="@+id/tvAmount" />
+
+    <SeekBar
+        android:id="@+id/seekBarTip"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTipPercentage"
+        app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
+        app:layout_constraintTop_toTopOf="@+id/tvTipPercentage" />
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Tip"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvNumberOfPeople"
+        app:layout_constraintStart_toStartOf="@+id/tvNumberOfPeople"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipPercentage" />
+
+    <TextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTip"
+        app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
+        app:layout_constraintTop_toTopOf="@+id/tvTip" />
+
+    <TextView
+        android:id="@+id/tvNumberOfPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Number of People"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tvTip" />
+
+    <EditText
+        android:id="@+id/etNumberOfPeople"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNumberOfPeople"
+        app:layout_constraintStart_toEndOf="@+id/tvNumberOfPeople"
+        app:layout_constraintTop_toTopOf="@+id/tvNumberOfPeople" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Total"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumberOfPeople" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="italic"
+        android:text="Total Per Person"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/tvTotalPerPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="TextView"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
