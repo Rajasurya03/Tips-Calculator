@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.TextView
+import org.w3c.dom.Text
 
 private const val TAG = "MainActivity"
 private const val InitialPercentage = 14
@@ -59,9 +60,26 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-    }
+        etNumberOfPeople.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun afterTextChanged(p0: Editable?) {
+                computeTotalPerPerson()
+            }
+
+        })
+    }
     private fun computeTipandTotal() {
-        TODO("Not yet implemented")
+        val baseAmount = etPriceAmount.text.toString().toDouble()
+        val tipPercentage = seekBarTip.progress
+        tvTipAmount.text = (baseAmount * tipPercentage / 100).toString()
+        tvTotal.text = (baseAmount + tipPercentage).toString()
+    }
+    private fun computeTotalPerPerson() {
+        val totalAmount = tvTotal.text.toString().toDouble()
+        val members = etNumberOfPeople.toString().toDouble()
+        tvTotalPerPerson.text = (totalAmount / members).toString()
     }
 }
