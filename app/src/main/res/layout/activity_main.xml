@@ -9,6 +9,19 @@
     tools:layout_editor_absoluteY="13dp">
 
     <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/prussianBlue"
+        android:padding="15dp"
+        android:text="Tip Calculator"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tvAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,10 +36,10 @@
         android:id="@+id/etPriceAmount"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:ems="10"
-        android:inputType="numberDecimal"
         android:hint="Bill Amount"
+        android:inputType="numberDecimal"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,10 +65,22 @@
         app:layout_constraintTop_toTopOf="@+id/tvTipPercentage" />
 
     <TextView
+        android:id="@+id/tvTipDiscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Acceptable"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarTip"
+        app:layout_constraintStart_toStartOf="@+id/seekBarTip"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarTip"
+        tools:text="Acceptable" />
+
+    <TextView
         android:id="@+id/tvTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:text="Tip"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/tvNumberOfPeople"
@@ -85,11 +110,12 @@
 
     <EditText
         android:id="@+id/etNumberOfPeople"
-        android:layout_width="50dp"
+        android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
         android:ems="10"
         android:inputType="number"
+        android:hint="Members"
         android:text="1"
         app:layout_constraintBottom_toBottomOf="@+id/tvNumberOfPeople"
         app:layout_constraintStart_toEndOf="@+id/tvNumberOfPeople"
@@ -113,7 +139,7 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="20dp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
         app:layout_constraintTop_toTopOf="@+id/textView8" />
@@ -124,9 +150,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
-        android:textStyle="italic"
         android:text="Total Per Person"
         android:textSize="20dp"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -134,9 +160,9 @@
         android:id="@+id/tvTotalPerPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:text="0"
         android:textSize="20dp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
