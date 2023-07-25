@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 Log.i(TAG, "OnProgressChange : $p1")
                 tvTipPercentage.text = "$p1%"
+                computeTipandTotal()
+                computeTotalPerPerson()
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {}
@@ -66,20 +68,33 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun afterTextChanged(p0: Editable?) {
+                Log.i(TAG, "afterTextChanged : $p0")
                 computeTotalPerPerson()
             }
 
         })
     }
     private fun computeTipandTotal() {
+        if(etPriceAmount.text.isEmpty() or etNumberOfPeople.text.isEmpty()){
+            tvTipAmount.text = "0"
+            tvTotal.text = "0"
+            tvTotalPerPerson.text = "0"
+            return
+        }
         val baseAmount = etPriceAmount.text.toString().toDouble()
         val tipPercentage = seekBarTip.progress
-        tvTipAmount.text = (baseAmount * tipPercentage / 100).toString()
-        tvTotal.text = (baseAmount + tipPercentage).toString()
+        val tipAmount = baseAmount * tipPercentage / 100
+        tvTipAmount.text = "%.2f".format(tipAmount)
+        tvTotal.text = "%.2f".format(baseAmount + tipAmount)
+        computeTotalPerPerson()
     }
     private fun computeTotalPerPerson() {
+        if(etNumberOfPeople.text.isEmpty() or etPriceAmount.text.isEmpty()){
+            tvTotalPerPerson.text = "0"
+            return
+        }
         val totalAmount = tvTotal.text.toString().toDouble()
-        val members = etNumberOfPeople.toString().toDouble()
-        tvTotalPerPerson.text = (totalAmount / members).toString()
+        val members = etNumberOfPeople.text.toString().toInt()
+        tvTotalPerPerson.text = "%.2f".format(totalAmount / members)
     }
 }
