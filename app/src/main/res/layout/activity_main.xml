@@ -4,43 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteX="69dp"
-    tools:layout_editor_absoluteY="13dp">
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvHeader"
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/prussianBlue"
-        android:padding="15dp"
-        android:text="Tip Calculator"
-        android:textColor="@color/white"
-        android:textSize="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:text="Sweet and Spicy"
+        android:textAllCaps="true"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvAmount"
+        android:id="@+id/tvHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Amount"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/etPriceAmount"
-        app:layout_constraintEnd_toEndOf="@+id/tvTipPercentage"
-        app:layout_constraintStart_toStartOf="@+id/tvTipPercentage"
-        app:layout_constraintTop_toTopOf="@+id/etPriceAmount" />
+        android:layout_marginStart="30dp"
+        android:text="Shared Bill Calculator"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/etPriceAmount"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="200dp"
+        android:backgroundTintMode="add"
         android:ems="10"
         android:hint="Bill Amount"
         android:inputType="numberDecimal"
-        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/color_light_gray"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,30 +52,41 @@
         android:id="@+id/tvTipPercentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:text="0"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/tvTip"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvTip"
         app:layout_constraintTop_toBottomOf="@+id/tvAmount" />
 
     <SeekBar
         android:id="@+id/seekBarTip"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
+        android:clipToOutline="false"
+        android:progressBackgroundTint="@color/color_gray"
+        android:progressTint="@color/color_blue"
+        android:thumbTint="@color/color_dark_blue"
         app:layout_constraintBottom_toBottomOf="@+id/tvTipPercentage"
         app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
-        app:layout_constraintTop_toTopOf="@+id/tvTipPercentage" />
+        app:layout_constraintTop_toTopOf="@+id/tvTipPercentage"
+        app:layout_constraintVertical_bias="0.444" />
 
     <TextView
         android:id="@+id/tvTipDiscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:text="Acceptable"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/seekBarTip"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="@+id/seekBarTip"
         app:layout_constraintTop_toBottomOf="@+id/seekBarTip"
         tools:text="Acceptable" />
@@ -80,10 +95,12 @@
         android:id="@+id/tvTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:text="Tip"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/tvNumberOfPeople"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/tvNumberOfPeople"
         app:layout_constraintTop_toBottomOf="@+id/tvTipPercentage" />
 
@@ -91,20 +108,26 @@
         android:id="@+id/tvTipAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:text="0"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/tvTip"
         app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
-        app:layout_constraintTop_toTopOf="@+id/tvTip" />
+        app:layout_constraintTop_toTopOf="@+id/tvTip"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvNumberOfPeople"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
         android:text="Number of People"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/tvTip" />
 
@@ -112,24 +135,28 @@
         android:id="@+id/etNumberOfPeople"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="52dp"
         android:ems="10"
-        android:inputType="number"
         android:hint="Members"
+        android:inputType="number"
         android:text="1"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/tvNumberOfPeople"
         app:layout_constraintStart_toEndOf="@+id/tvNumberOfPeople"
-        app:layout_constraintTop_toTopOf="@+id/tvNumberOfPeople" />
+        app:layout_constraintTop_toTopOf="@+id/tvNumberOfPeople"
+        app:layout_constraintVertical_bias="0.695" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:text="Total"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/tvNumberOfPeople" />
 
@@ -137,20 +164,24 @@
         android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:text="0"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
+        app:layout_constraintTop_toTopOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
         android:text="Total Per Person"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
@@ -160,11 +191,41 @@
         android:id="@+id/tvTotalPerPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:text="0"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/etNumberOfPeople"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:text="Amount"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etPriceAmount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etPriceAmount"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="&quot; Only spend on what matters most &quot;"
+        android:textAllCaps="true"
+        android:textColor="@color/color_orange"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
